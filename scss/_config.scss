@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Lato', sans-serif;
+}
+
+@mixin center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin popup {
+    text-align: center;
+    font-size: 2.8vh;
+    color: #fff;
+    letter-spacing: .2vh;
+    width: 100%;
+    font-weight: 700;
+}
+
+$green: green;
+$lightgreen: #00cc99;
+$violet: violet;
+$red: red;
+$sand: #ffff99;
+$blue: blue;
+$lightblue: #00ccff;
+$darkmagenta: darkmagenta;
+$yellow: yellow;
+$orange: orange;
+$hiddenColor: #006080;

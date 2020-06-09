@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="img"></div>
+        <div class="score">
+            <div class="pairs">Liczba par: <span class="pairNumber">0 z 10</span>|<span class="movement">Ruchy: 0</span>
+            </div>
+        </div>
+        <div class="game">
+            <div class="overlay"></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+            <div class="gameElement" data-elements></div>
+        </div>
+        <div class="timer">0:00</div>
+        <div class="endGame">
+            <div class="popup">
+                <p class="endMovement"></p>
+                <p class="endTime"></p>
+                <p class="bestTime"></p>
+                <p class="newHighscore">NOWY REKORD!</p>
+                <button class="btnEnd">Jeszcze raz!</button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        const game = new memoryGame();
+        game.initializeGame();
+    </script>
+</body>
+
+</html>

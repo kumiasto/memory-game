@@ -1,0 +1,190 @@
+@import '_config.scss';
+
+main {
+    background-image: url(img/bgc.png);
+}
+
+.pairs {
+    @include center;
+    top: 17%;
+    font-weight: bold;
+    font-size: 3vh;
+    color: #fff;
+}
+
+.game {
+    @include center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 7px;
+    width: 65vh;
+    height: 45vh;
+    top: 40%;
+
+    .gameElement {
+        border-radius: 15%;
+        z-index: 99;
+    }
+
+    .gameElement.zindex {
+        opacity: .1;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .zindex {
+        z-index: -99;
+        opacity: 1;
+    }
+}
+
+.pairs {
+    @include center;
+    top: 10%;
+    letter-spacing: .7vh;
+    font-weight: 700;
+    font-size: 4vh;
+    color: #fff;
+}
+
+.timer {
+    @include center;
+    bottom: 10%;
+    font-size: 10vh;
+    font-weight: 700;
+    letter-spacing: 1vh;
+    color: #fff;
+}
+
+.offTimer {
+    display: none;
+}
+
+.endGame {
+    position: relative;
+    top: 50%;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.visible {
+    opacity: 1;
+    z-index: 1;
+}
+
+.popup {
+    @include center;
+    background-color: #339933;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    top: 50%;
+    height: 35vh;
+    width: 50vh;
+    border-radius: 5vh;
+    box-shadow: 0 2px 10px 1px rgba(51, 153, 51, .5);
+}
+
+.endTime,
+.endMovement,
+.bestTime {
+    @include popup;
+}
+
+.bestTime {
+    display: none;
+}
+
+.endMovement {
+    margin-top: 15px;
+}
+
+.newHighscore {
+    @include popup;
+    font-size: 3vh;
+    color: #004d00;
+    display: none;
+    letter-spacing: .8vh;
+}
+
+.block {
+    display: block;
+}
+
+button {
+    width: 65%;
+    padding: 2.5vh 2.5vh;
+    border-radius: 5vh;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid #fff;
+    font-size: 3vh;
+    letter-spacing: .2vh;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.green {
+    background-color: $green;
+}
+
+.lightgreen {
+    background-color: $lightgreen;
+}
+
+.violet {
+    background-color: $violet;
+}
+
+.red {
+    background-color: $red;
+}
+
+.sand {
+    background-color: $sand;
+}
+
+.blue {
+    background-color: $blue;
+}
+
+.lightblue {
+    background-color: $lightblue;
+}
+
+.darkmagenta {
+    background-color: $darkmagenta;
+}
+
+.yellow {
+    background-color: $yellow;
+}
+
+.orange {
+    background-color: $orange;
+}
+
+.hidden {
+    background-color: $hiddenColor;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($hiddenColor, 10);
+    }
+}
