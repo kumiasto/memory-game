@@ -105,6 +105,10 @@ main {
     @include popup;
 }
 
+.fontSize{
+    font-size: 1.9rem;
+}
+
 .bestTime {
     display: none;
 }
@@ -126,15 +130,15 @@ main {
 }
 
 button {
-    width: 65%;
+    width: 85%;
     padding: 2.5vh 2.5vh;
     border-radius: 5vh;
     border: none;
     cursor: pointer;
     background-color: rgba(255, 255, 255, .1);
     border: 1px solid #fff;
-    font-size: 3vh;
-    letter-spacing: .2vh;
+    font-size: 4vh;
+    letter-spacing: .4vh;
     color: #fff;
     margin-bottom: 15px;
     font-weight: 700;

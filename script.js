@@ -26,13 +26,13 @@ class memoryGame {
     this.elements = null;
     this.elementsArray = [];
     this.pairs = 10;
-    this.counter = 0;
     this.timerInterval = 300;
     this.movement = 0;
     this.minutes = 0;
     this.seconds = 0;
     this.local = 0;
     this.gameTime = 0;
+    this.counter = null;
 
     this.getSelectors = {
       elements: "[data-elements]",
@@ -84,20 +84,19 @@ class memoryGame {
     if (this.elementsArray.length === 2) {
 
       if (this.elementsArray[0].className === this.elementsArray[1].className) {
-        this.counter++;
         setTimeout(() => {
-
           this.elementsArray.forEach(element => element.classList.add("zindex"));
           this.clearArray();
           this.counterPairs();
         }, this.timerInterval);
-        console.log(this.counter);
       } else {
         this.clearArray();
         this.addHiddenToElement(200);
       }
-    } else return;
-
+    } else {
+      return;
+    }
+    this.counter = (document.querySelectorAll('.gameElement.zindex').length / 2) + 1;
     this.movementNumbers();
     this.endGame();
   }
@@ -125,7 +124,9 @@ class memoryGame {
       }
       this.seconds = this.seconds < 10 ? `0${this.seconds}` : this.seconds;
       document.querySelector(".timer").textContent = `${this.minutes}:${this.seconds}`;
-      if (this.counter === 10) {
+
+
+      if (this.counter === this.pairs) {
         clearInterval(timeCounter);
         this.storageResult();
       }
@@ -158,6 +159,8 @@ class memoryGame {
       divEnd.classList.add('visible');
       pEndMovement.textContent = `Liczba ruchów: ${this.movement}`;
       pEndTime.textContent = `Twój czas: ${actualResult}`;
+      pEndMovement.classList.add('fontSize');
+      pEndTime.classList.add('fontSize');
 
       if (localStorage.timer > actualResult) {
         pNewHighscore.classList.add('block');
@@ -170,6 +173,8 @@ class memoryGame {
       else {
         pBestTime.textContent = `Twój najlepszy czas: ${localStorage.timer}`;
         pBestTime.classList.add('block');
+        pEndMovement.classList.remove('fontSize');
+        pEndTime.classList.remove('fontSize');
       }
     }
   }
